@@ -8,7 +8,7 @@ var court2 = function () {
 	}
 };
 var court = function () {
-	console.log('.$........');
+	console.log('.$...#....');
 	console.log('..........');
 	console.log('...*......');
 	console.log('.......*..');
