@@ -1,8 +1,9 @@
 var tutorial = function () {
 	alert('Welcome to the tutorial!\n@\tThis is you, the game character\n.\tThis is the ground, walk on it to reach the goal\n*\tThose are explosive bombs, be careful!\n#\tThe hashtag is a wall which you cannot pass.\n$\tThis is the goal of the game, collect the money and you win!');
 };
+//function to create the map
 var createMap = function () {
-	//creating the map
+	//creating the map variable
 	var map = [
 		[],
 		[],
@@ -21,12 +22,13 @@ var createMap = function () {
 			map[i].push('?');
 		}
 	}
-	//Make cordinate 9,4 to @ and 0,0 to $
+	//Make cordinate 9(y),4(x) to @, 0,4 to $ and 4,4 to ?
 	map[9][4] = '@';
 	map[0][4] = '$';
-	map[4][4] = '?';
+	map[4][4] = '?'; //a * in the visible map
 	return map;
 };
+//Function to print out the hiddenMap in the console
 var printHiddenMap = function (map) {
 	//oddRows and evenRows to not stack the logs in the console
 	var oddRows = [];
@@ -45,6 +47,7 @@ var printHiddenMap = function (map) {
 		evenRows.length = 0;
 	}
 };
+//Function to print out the visible map in the console before it turns hidden
 var printMap = function () {
 	console.log('....$.....');
 	console.log('..........');
@@ -57,6 +60,7 @@ var printMap = function () {
 	console.log('..........');
 	console.log('....@.....');
 };
+//Function to create delay(copied from internet)
 var sleep = function (milliseconds) {
 	var start = new Date().getTime();
 	for (var i = 0; i < 1e7; i++) {
@@ -65,12 +69,14 @@ var sleep = function (milliseconds) {
 		}
 	}
 };
+//The function is used to move the character.
 var move = function (map) {
 	var moveWhere = prompt('Where do you want to move(right,left,up,down)?');
 	moveWhere = moveWhere.trim();
 	moveWhere = moveWhere.toLowerCase();
 	var moveX, moveY;
 	var currentX, currentY;
+	//Check where the user want to move and translate it from letter to x or y movement
 	switch (moveWhere) {
 	case 'left':
 	case 'l':
@@ -97,6 +103,7 @@ var move = function (map) {
 		moveY = 0;
 		break;
 	}
+	//Searching through the map for the currentX and currentY of the character(@)
 	for (var i = 0; i < map.length; i++) {
 		for (var j = 0; j < map.length; j++) {
 			if (map[i][j] === '@') {
@@ -106,6 +113,7 @@ var move = function (map) {
 			}
 		}
 	}
+	//Looking for where the user want to move the character and doesnt let it walk outside the map
 	if (moveX === 1 && currentX !== 9) {
 		map[currentY][currentX] = '.';
 		map[currentY][currentX + 1] = '@';
@@ -121,6 +129,7 @@ var move = function (map) {
 	}
 	return map;
 };
+//The game loop-function
 var start = function () {
 	var play = true;
 	var map = createMap();
@@ -133,14 +142,13 @@ var start = function () {
 		map = move(map);
 	}
 };
+//The menu
 do {
 	var where = prompt('Welcome to the menu!\nA)Start game\nB)Tutorial\nC)Exit game');
-
 	if (where !== null) {
 		where = where.trim();
 		where = where.toLowerCase();
 	}
-
 	switch (where) {
 	case 'a':
 		start();
