@@ -71,9 +71,11 @@ var sleep = function (milliseconds) {
 };
 //The function is used to move the character.
 var move = function (map) {
-	var moveWhere = prompt('Where do you want to move(right,left,up,down)?');
-	moveWhere = moveWhere.trim();
-	moveWhere = moveWhere.toLowerCase();
+	var moveWhere = prompt('Where do you want to move?\nup(w),left(a),down(s),right(d)');
+	if (where !== null) {
+		moveWhere = moveWhere.trim();
+		moveWhere = moveWhere.toLowerCase();
+	}
 	var moveX, moveY;
 	var currentX, currentY;
 	//Check where the user want to move and translate it from letter to x or y movement
@@ -95,7 +97,6 @@ var move = function (map) {
 		break;
 	case 'down':
 	case 's':
-	case 'd':
 		moveY = -1;
 		break;
 	default:
@@ -144,6 +145,7 @@ var start = function () {
 };
 //The menu
 do {
+	alert('If running this first time, please first exit the game, open the console(alt+cmd+i) and reload the page');
 	var where = prompt('Welcome to the menu!\nA)Start game\nB)Tutorial\nC)Exit game');
 	if (where !== null) {
 		where = where.trim();
