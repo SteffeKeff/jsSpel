@@ -1,5 +1,6 @@
-'use strict';
-(function()
-{
-	console.log(level.toString(0));
+(function () {
+	'use strict';
+	for (var i = 0; i < level.map.length; i++) {
+		console.log(level.map[i]);
+	}
 })();
