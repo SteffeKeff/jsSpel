@@ -1,6 +1,7 @@
 'use strict';
 (function()
 {
+	
 var level = [];
 var map = [];
 map.push('################################'); //0
