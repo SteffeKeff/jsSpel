@@ -1,6 +1,10 @@
-(function () {
-	'use strict';
-	for (var i = 0; i < level.map.length; i++) {
-		console.log(level.map[i]);
-	}
-})();
+printMap();
+alert('Starta spelet?');
+console.clear();
+level1();
+printMap();
+console.log(level.map[9][15]);
+move();
+console.clear();
+printMap();
+console.log(level.map[9][15]);
