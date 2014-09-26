@@ -1,4 +1,4 @@
-var move = function () {
+var move = function (level) {
 	var moveWhere = prompt('Where do you want to move?\nup(w),left(a),down(s),right(d)');
 	moveWhere = moveWhere.trim();
 	moveWhere = moveWhere.toLowerCase();
@@ -55,4 +55,7 @@ var move = function () {
 		level.map[currentY][currentX] = '.';
 		level.map[currentY + 1][currentX] = '@';
 	}
+	printMap();
+	level.map[0][currentY][currentX] = '.';
+	console.log(level.map[0][currentY][currentX]);
 };
