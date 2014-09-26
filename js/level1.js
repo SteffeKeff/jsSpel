@@ -1,14 +1,21 @@
-var level1 = function () {
-	level.map.length = 0;
-	level.map.push('################################'); //0
-	level.map.push('#$               *#            #'); //1
-	level.map.push('####    *       ###            #'); //2
-	level.map.push('#  #    *                      #'); //3
-	level.map.push('#  ############                #'); //4
-	level.map.push('#              *##########     #'); //5
-	level.map.push('#   ##########                 #'); //6
-	level.map.push('#               ################'); //7
-	level.map.push('#  #############               #'); //8
-	level.map.push('#              @               #'); //9
-	level.map.push('################################'); //10
-};
+/***************************************************************
+* Name:      level1.js
+* Purpose:   Main website XHTML(XML)
+* Encoding:  UTF-8
+**************************************************************/
+'use strict';
+level.mapH.push(11);
+level.mapW.push(37);
+var addToLevel = [];
+addToLevel.push('################################'); //0
+addToLevel.push('#$               *#            #'); //1
+addToLevel.push('####    *       ###            #'); //2
+addToLevel.push('#  #    *                      #'); //3
+addToLevel.push('#  ############                #'); //4
+addToLevel.push('#              *##########     #'); //5
+addToLevel.push('#   ##########                 #'); //6
+addToLevel.push('#               ################'); //7
+addToLevel.push('#  #############               #'); //8
+addToLevel.push('#              @               #'); //9
+addToLevel.push('################################'); //10
+level.map.push(addToLevel);    //level.map[1][rowY][charX]
