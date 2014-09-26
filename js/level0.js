@@ -6,6 +6,7 @@
 'use strict';
 level.mapH.push(11);
 level.mapW.push(37);
+level.plStartPos.push(0);
 var addToLevel = [];
 addToLevel.push('#####################################'); //0
 addToLevel.push('#                                   #'); //1
