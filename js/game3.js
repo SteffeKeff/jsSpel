@@ -1,10 +1,8 @@
-printMap();
+console.log(level.toString(level.current));
 alert('Starta spelet?');
 console.clear();
-level1();
-printMap();
-console.log(level.map[9][15]);
-move(level);
-//console.clear();
-//printMap();
-console.log(level.map[9][15]);
+level.current = 1;
+while (true) {
+	console.log(level.toString(level.current));
+	move();
+}
