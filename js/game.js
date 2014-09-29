@@ -14,7 +14,8 @@ player.setStartPos(level.playerStartX[level.current], level.playerStartY[level.c
 var runMain = true
 
 
-while (runMain) {
+while (runMain)
+{
 	ui.clear();
 	console.log(level.toString(level.current));
 	logic.askMoveLcation();

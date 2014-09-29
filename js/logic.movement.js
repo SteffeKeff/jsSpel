@@ -12,7 +12,6 @@ logic.movement.movePlayer = function (where)
 	switch(where)
     {
     	case -1: 
-    		logic.gameWon();
     		break;
         case 0: //left
         	if(logic.movement.collision(player.x-1, player.y))

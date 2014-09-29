@@ -76,21 +76,21 @@ logic.gameWon = function ()
     {
         if(animationFrame == 0)
         {
-            level.map[3][1] = '#                          .  @     #';
-            level.map[3][2] = '#                           .....   #';
-            level.map[3][3] = '#                             .  .  #';
-            level.map[3][4] = '# if(game === won){          ...    #';
-            level.map[3][5] = '#     player.happy = true;   . .    #';
-            level.map[3][6] = '# }else if(game === lose){  .. ..   #';
+            level.map[level.current][1] = '#                          .  @     #';
+            level.map[level.current][2] = '#                           .....   #';
+            level.map[level.current][3] = '#                             .  .  #';
+            level.map[level.current][4] = '# if(game === won){          ...    #';
+            level.map[level.current][5] = '#     player.happy = true;   . .    #';
+            level.map[level.current][6] = '# }else if(game === lose){  .. ..   #';
         }
         else if(animationFrame == 1)
         {
-            level.map[3][1] = '#                             @  .  #';
-            level.map[3][2] = '#                           .....   #';
-            level.map[3][3] = '#                          .  .     #';
-            level.map[3][4] = '# if(game === won){          ...    #';
-            level.map[3][5] = '#     player.happy = true;   . .    #';
-            level.map[3][6] = '# }else if(game === lose){  .. ..   #';
+            level.map[level.current][1] = '#                             @  .  #';
+            level.map[level.current][2] = '#                           .....   #';
+            level.map[level.current][3] = '#                          .  .     #';
+            level.map[level.current][4] = '# if(game === won){          ...    #';
+            level.map[level.current][5] = '#     player.happy = true;   . .    #';
+            level.map[level.current][6] = '# }else if(game === lose){  .. ..   #';
         }
         ui.clear();
         ui.output(level.toString(level.current));
