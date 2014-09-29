@@ -11,7 +11,7 @@ ui.popup('Starta spelet?');
 ui.clear();
 level.current = 2;
 player.setStartPos(level.playerStartX[level.current], level.playerStartY[level.current]);
-var runMain = true
+var runMain = true;
 
 
 while (runMain)
